@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@font-face {
+  font-family: "Exo 2.0";
+  src: url(../fonts/Exo2.0-Thin.woff2) format("woff2");
+  font-style: normal;
+  font-weight: thin;
+}
+@font-face {
+  font-family: "Trebuchet MS";
+  src: url(../fonts/trebuchetms.woff2) format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+.container {
+  max-width: 1150px;
+  height: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.goods {
+  width: 100vw;
+  height: 100vh;
+}
+@media (max-width: 1024px) {
+  .goods {
+    overflow-y: auto;
+  }
+}
+.goods__wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1024px) {
+  .goods__wrapper {
+    align-items: flex-start;
+  }
+}
+.goods__body {
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .goods__body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+.goods__header {
+  font-family: "Exo 2.0";
+  font-size: 36px;
+  line-height: 120%;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+  cursor: default;
+}
+.goods__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+@media (max-width: 1150px) {
+  .goods__grid {
+    gap: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .goods__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+.goods__item {
+  font-family: "Trebuchet MS";
+}
+@media (max-width: 1024px) {
+  .goods__item {
+    min-width: 320px;
+  }
+}
+.goods__item-card {
+  position: relative;
+  padding-bottom: 150%;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.goods__item-img {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.goods__item-border {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: ease 0.2s fill;
+}
+.goods__item-border .stroke {
+  fill: #1698D9;
+}
+.goods__item-back {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.goods__item-textinfo {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 21px 51px;
+}
+.goods__item-topinfo {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #666666;
+  margin-bottom: 5px;
+}
+.goods__item-title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 116%;
+  margin-left: -3px;
+}
+.goods__item-subtitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 116%;
+  margin-top: -1px;
+  margin-bottom: 15px;
+}
+.goods__item-discription {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+  color: #666666;
+}
+.goods__item-discription span {
+  font-weight: 700;
+}
+.goods__item-weight {
+  position: absolute;
+  z-index: 4;
+  right: 16px;
+  bottom: 16px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #1698D9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 42px;
+  transition: ease 0.2s background-color;
+}
+.goods__item-weight span {
+  font-size: 21px;
+}
+.goods__item-subinfo {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 115%;
+  color: #fff;
+  cursor: default;
+}
+.goods__item-subinfo button {
+  background-color: transparent;
+  font-size: 13px;
+  line-height: 115%;
+  color: #1698D9;
+  font-weight: 800;
+  transition: ease 0.2s color;
+}
+.goods__item-subinfo button span {
+  -webkit-text-decoration: underline dashed #1698D9;
+          text-decoration: underline dashed #1698D9;
+}
+
+.hover:hover .goods__item-border .stroke {
+  fill: #2EA8E6;
+}
+.hover:hover .goods__item-weight {
+  background-color: #2EA8E6;
+}
+.hover:hover .goods__item-subinfo button {
+  color: #2EA8E6;
+}
+
+.checked .goods__item-border {
+  transition: ease 0.2s fill;
+}
+.checked .goods__item-border .stroke {
+  fill: #D91667;
+}
+.checked .goods__item-weight {
+  background-color: #D91667;
+}
+
+.checked-hover:hover .goods__item-border {
+  transition: ease 0.2s fill;
+}
+.checked-hover:hover .goods__item-border .stroke {
+  fill: #E52E7A;
+}
+.checked-hover:hover .goods__item-topinfo {
+  transition: ease 0.2s color;
+  color: #E62E7A;
+}
+.checked-hover:hover .goods__item-weight {
+  background-color: #E52E7A;
+}
+.checked-hover:hover .goods__item-subinfo button {
+  color: #E52E7A;
+}
+
+.disabled .goods__item-card {
+  cursor: default;
+}
+.disabled .goods__item-img {
+  opacity: 0.5;
+}
+.disabled .goods__item-textinfo {
+  opacity: 0.5;
+}
+.disabled .goods__item-weight {
+  background-color: #B3B3B3;
+}
+.disabled .goods__item-border path {
+  fill: #B3B3B3;
+}
+.disabled .goods__item-subinfo {
+  color: #FFFF66;
+}
